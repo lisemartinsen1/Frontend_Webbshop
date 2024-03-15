@@ -14,7 +14,7 @@
         integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
         crossorigin="anonymous"></script>
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -42,7 +42,9 @@
                         </ul>
                     </nav>
                 </div>
-                <div class="col text-center"><h1>SALJ</h1></div>
+                <div class="col text-center">
+                    <h1>SALJ</h1>
+                </div>
                 <div id="search-bar" class="col">
                     <form>
                         <input class="form-control me-2" type="search" placeholder="Sök" aria-label="Sök">
@@ -52,37 +54,80 @@
         </div>
     </header>
 
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <div class="image-container">
-                        <img src="https://kvalitetsmagasinet.se/wp-content/blogs.dir/sites/6/2018/07/sommarbild.jpeg" class="img-fluid" alt="Bild">
-                        <div class="overlay-text">
-                            <h3 class="card-title">Nyheter</h3>
-                            <div class="btn-wrapper">
-                                <a href="#" class="btn btn-primary">Upptäck</a>
-                            </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="image-container">
+                    <img src="https://kvalitetsmagasinet.se/wp-content/blogs.dir/sites/6/2018/07/sommarbild.jpeg"
+                        class="img-fluid" alt="Bild">
+                    <div class="overlay-text">
+                        <h3 class="card-title">Nyheter</h3>
+                        <div class="btn-wrapper">
+                            <a href="#" class="btn btn-primary">Upptäck</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="container-fluid"></div>
+    <div class="container-fluid"></div>
 
-        <div class="row">
-            <div class="col-sm-6 col-md-4 col-lg-3">Col 1</div>
-            <div class="col-sm-6 col-md-4 col-lg-3">Col 1</div>
-            <div class="col-sm-6 col-md-4 col-lg-3">Col 1</div>
-            <div class="col-sm-6 col-md-4 col-lg-3">Col 1</div>
-            <div class="col-sm-6 col-md-4 col-lg-3">Col 1</div>
-            <div class="col-sm-6 col-md-4 col-lg-3">Col 1</div>
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-lg-3">Col 1</div>
+        <div class="col-sm-6 col-md-4 col-lg-3">Col 1</div>
+        <div class="col-sm-6 col-md-4 col-lg-3">Col 1</div>
+        <div class="col-sm-6 col-md-4 col-lg-3">Col 1</div>
+        <div class="col-sm-6 col-md-4 col-lg-3">Col 1</div>
+        <div class="col-sm-6 col-md-4 col-lg-3">Col 1</div>
+    </div>
+
+    <footer>
+        <!--
+    1. Nyhetsbrev
+    2. Sociala medier logo
+    3. Länkar till kundservice mm
+    4. 2024 SALJ Copyright
+
+    Innehållet ska vara centrerat på sidan
+   -->
+
+        <div id="container-footer" class="container-fluid text-center">
+            <label id="email-label-footer" for="exampleInputEmail1" class="form-label mt-4">Anmäl dig till
+                nyhetsbrev!</label>
+            <input type="email" class="form-control" id="email-input-footer" aria-describedby="emailHelp"
+                placeholder="Skriv in mail">
+            <small id="email-small-footer" class="form-text text-muted">10% vid nästa köp om du anmäler dig till
+                nyhetsbrevet</small>
+            <button type="button" class="btn btn-primary">Anmäl</button>
+
+
+            <div class="row align-items-center">
+
+                <div class="col">
+                    <nav>
+                        <ul id="icon-list-footer" class="list-inline">
+                            <li class="list-inline-item"><a href="#"><img src="icons\instagram.png" alt="Instagram"></a>
+                            </li>
+                            <li class="list-inline-item"><a href="#"><img src="icons\facebook.png" alt="Facebook"></a>
+                            </li>
+                            <li class="list-inline-item"><a href="#"><img src="icons\tik-tok.png" alt="Tiktok"></a></li>
+                            <li class="list-inline-item"><a href="#"><img src="icons\twitter.png" alt="X"></a></li>
+                            <li class="list-inline-item"><a href="#"><img src="icons\youtube.png" alt="Youtube"></a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+            </div>
+
+            <div id="copyright-footer" class="container">
+                <span class="text-muted">&copy; 2024 SALJ. Alla rättigheter förbehållna.</span>
+            </div>
+
         </div>
+    </footer>
 
-<footer>
-    
-</footer>
-    
 </body>
 
 
