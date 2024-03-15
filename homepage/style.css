@@ -26,3 +26,7 @@ color: black;
 text-decoration: underline;
 color: black;
 }
+
+#inputfname{
+    padding-left: 2em;
+}
