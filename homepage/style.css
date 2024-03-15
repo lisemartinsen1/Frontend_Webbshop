@@ -37,11 +37,37 @@ color: black;
     height: auto;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
     .img-fluid.d-flex {
         justify-content: center !important;
         align-items: center !important;
+        width:100%;
+        padding-right: 6px;
+        padding-left: 6px;
     }
+}
+
+.img-fluid img {
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+}
+
+.spring-new-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.spring-link {
+    align-self: center;
+    text-decoration: none;
+    color: black;
+}
+
+.spring-link:hover {
+    text-decoration: underline;
+    color: black;
 }
 
 #email-input-footer {
@@ -84,6 +110,16 @@ footer {
 
 }
 
+#customer-service-div a {
+    text-decoration: none;
+    color: black;
+}
+
+#customer-service-div a:hover {
+    text-decoration: underline;
+    color:black
+}
+
 .spacer {
-    height: 100px; /* Justera höjden efter behov */
+    height: 100px; 
 }
