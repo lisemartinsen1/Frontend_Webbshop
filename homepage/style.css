@@ -27,6 +27,6 @@ text-decoration: underline;
 color: black;
 }
 
-#inputfname{
-    padding-left: 2em;
+.form-floating label {
+left: 10px;
 }

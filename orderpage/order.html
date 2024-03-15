@@ -16,29 +16,66 @@
         <h1>Kassa</h1>
 
         <form>
+            <style>
+                .form-floating label {
+                    left: 10px;
+                }
+            </style>
+            
             <div class="row">
-                <div class="col, form-floating mb-3 mt-3">
+                <div class="col form-floating mb-3 mt-3">
                     <input type="email" class="form-control" placeholder="E-post" name="email">
                     <label for="email">E-post</label>
 
                     <div class="row">
-                        <div class="col, form-floating mb-3 mt-3">
+                        <div class="col form-floating mb-3 mt-3">
                             <input type="text" class="form-control" id="inputfname" placeholder="Förnamn" name="fname">
                             <label for="fname">Förnamn</label>
                         </div>
-                        <div class="col, form-floating mb-3 mt-3">
+
+                        <div class="col form-floating mb-3 mt-3">
                             <input type="text" class="form-control" placeholder="Efternamn" name="lname">
                             <label for="lname">Efternamn</label>
                         </div>
                     </div>
 
 
+                    <div class="row">
+                        <div class="col form-floating mb-3 mt-3">
+                            <input type="text" class="form-control" id="address" placeholder="Address" name="address">
+                            <label for="address">Address</label>
+                        </div>
+
+                        <div class="col form-floating mb-3 mt-3">
+                            <input type="text" class="form-control" placeholder="Postnummer" name="postnummer">
+                            <label for="postnummer">Postnummer</label>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col form-floating mb-3 mt-3">
+                            <input type="text" class="form-control" id="stad" placeholder="Stad" name="stad">
+                            <label for="stad">Stad</label>
+                        </div>
+
+                        <div class="col form-floating mb-3 mt-3">
+                            <input type="text" class="form-control" placeholder="Land" name="land">
+                            <label for="land">Land</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col form-floating mb-3">
+                            <input type="text" class="form-control" placeholder="telenr" name="telenr">
+                            <label for="telenr">Telefonnummer</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
 
                 <div class="col">
                     <h2>Här kommer en bild på produkten sen</h2>
-
-
 
                 </div>
             </div>
