@@ -7,6 +7,15 @@ header {
     position: relative;
     width: 100%;
 }
+
+.navbar-toggler {
+    outline: none;
+    border-color: white;
+}
+
+#hamburger {
+    height: 25px;
+}
 .overlay-text {
 position: absolute;
 top: 50%;

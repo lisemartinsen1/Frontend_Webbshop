@@ -34,15 +34,16 @@
         <!-- To Do
              1. Klicka på SALJ texten så ska sidan laddas om/hamna på startsida
              2. Få toggler-ikonen att hamna i mitten av knappen
+             3. Få toggler-ikonen att snurra 90 grader när man trycker på den
                 -->
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-3">
+                <div class="col-3">
                     <nav class="navbar navbar-expand-sm navbar">
                         <div class="container-fluid">
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#navbarNav">
-                                <span class="navbar-toggler-icon"></span>
+                                <img id="hamburger" src="icons/icons8-menu.svg" alt="">
                             </button>
                             <div class="collapse navbar-collapse" id="navbarNav">
                                 <ul class="navbar-nav">
@@ -61,14 +62,22 @@
                     </nav>
                 </div>
 
-                <div class="col-sm-6 text-center">
+                <div class="col-6 text-center">
                     <h1>SALJ</h1>
                 </div>
-                <div id="search-bar" class="col-sm-3">
+                <div id="search-bar" class="col-3 d-none d-sm-block"> <!-- Dölj på sm och större -->
                     <form>
                         <input class="form-control me-2" type="search" placeholder="Sök" aria-label="Sök">
                     </form>
                 </div>
+                <!-- Hur får jag tillbaka search-bar när jag klickar på ikonen? 
+                    Vill att sökbaren ska ta all plats i navbaren när man klickar på-->
+                <div id="search-icon" class="col-3 d-block d-sm-none d-flex justify-content-end"> <!-- Visa på mindre än sm -->
+                    <button class="btn" type="button">
+                        <i class="bi bi-search"></i> <!-- Bootstraps förstoringsglasikon -->
+                    </button>
+                </div>
+                
             </div>
         </div>
     </header>
