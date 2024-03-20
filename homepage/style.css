@@ -130,3 +130,40 @@ footer {
 .form-floating label {
 left: 10px;
 }
+
+/*CSS för customer service sidan! */
+.title {
+    text-align: center;
+    font-size: 3em;
+    margin: 1em;
+}
+
+.faq-section{
+    padding: 4em 2em;   
+}
+
+.faq {
+    list-style: none;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.faq li {
+     background: #f2f2f2;
+     border-bottom: 1px #ccc solid;
+}
+
+.faq li:first-child {
+    border-top: 1px #ccc solid;
+}
+
+.q {
+    padding: 1 em 0; 
+    border-left: 10 px #f2f2f2 solid;
+    cursor: pointer;
+}
+.q:hover {
+    border-left-color: aqua;
+}
+
+
