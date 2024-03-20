@@ -60,7 +60,7 @@ left: 10px;
 
 .q {
     padding: 1em 0; 
-    border-left: 10 px #f2f2f2 solid;
+    border-left: 10px #f2f2f2 solid;
     cursor: pointer;
 }
 .q:hover, .q:hover .arrow {
@@ -91,10 +91,6 @@ left: 10px;
 .a-opened{
     padding: 1em 1em 2em 3.3em;
     height: initial;
-}
-
-.arrow-rotated {
-    transform: rotate(90deg);
 }
 
 
