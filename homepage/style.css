@@ -9,12 +9,19 @@ header {
 }
 
 .navbar-toggler {
-    outline: none;
+
+    &:focus {
+        outline: none;
+    }
     border-color: white;
+    min-width: 50px;
 }
 
 #hamburger {
     height: 25px;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+
 }
 .overlay-text {
 position: absolute;
