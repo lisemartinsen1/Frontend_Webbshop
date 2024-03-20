@@ -32,6 +32,7 @@ text-decoration: underline;
 color: black;
 }
 
+<<<<<<< HEAD
 .img-news {
     width: 150%;
     height: auto;
@@ -123,3 +124,8 @@ footer {
 .spacer {
     height: 100px; 
 }
+=======
+.form-floating label {
+left: 10px;
+}
+>>>>>>> orderPage
