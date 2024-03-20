@@ -34,16 +34,18 @@
         <!-- To Do
              1. Klicka på SALJ texten så ska sidan laddas om/hamna på startsida
              2. Få toggler-ikonen att hamna i mitten av knappen
-             3. Få toggler-ikonen att snurra 90 grader när man trycker på den
+             3. Få toggler-ikonen att snurra 90 grader när man trycker på den (javascript?)
+             4. När skärmen är mindre än sm ska man kunna klicka på förstoringsglaset och en 
+                sökbar ska dyka upp och täcka hela navbaren (alltså täcka titel och länkar)
                 -->
         <div class="container-fluid">
-            <div class="row">
+            <div id="top-row" class="row">
                 <div class="col-3">
                     <nav class="navbar navbar-expand-sm navbar">
                         <div class="container-fluid">
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#navbarNav">
-                                <img id="hamburger" src="icons/icons8-menu.svg" alt="">
+                                data-bs-target="#navbarNav" onclick="rotateImage()">
+                                <img id="hamburger" class="img" src="icons/icons8-menu.svg" alt="">
                             </button>
                             <div class="collapse navbar-collapse" id="navbarNav">
                                 <ul class="navbar-nav">
@@ -73,7 +75,7 @@
                 <!-- Hur får jag tillbaka search-bar när jag klickar på ikonen? 
                     Vill att sökbaren ska ta all plats i navbaren när man klickar på-->
                 <div id="search-icon" class="col-3 d-block d-sm-none d-flex justify-content-end"> <!-- Visa på mindre än sm -->
-                    <button class="btn" type="button">
+                    <button class="btn" type="button" onclick="toggleSearchBar()">
                         <i class="bi bi-search"></i> <!-- Bootstraps förstoringsglasikon -->
                     </button>
                 </div>
@@ -181,7 +183,7 @@
         </div>
     </footer>
 
-
+    <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
