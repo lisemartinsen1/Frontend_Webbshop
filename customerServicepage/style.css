@@ -1,6 +1,27 @@
+
+header {
+    background-color: white;
+}
+
 .image-container {
     position: relative;
     width: 100%;
+}
+
+.navbar-toggler {
+
+    &:focus {
+        outline: none;
+    }
+    border-color: white;
+    min-width: 50px;
+}
+
+#hamburger {
+    height: 25px;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+
 }
 .overlay-text {
 position: absolute;
@@ -27,12 +48,90 @@ text-decoration: underline;
 color: black;
 }
 
+.img-news {
+    width: 150%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .img-fluid.d-flex {
+        justify-content: center !important;
+        align-items: center !important;
+        width:100%;
+        padding-right: 6px;
+        padding-left: 6px;
+    }
+}
+
+.img-fluid img {
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+}
+
+.spring-new-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.spring-link {
+    align-self: center;
+    text-decoration: none;
+    color: black;
+}
+
+.spring-link:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+#email-input-footer {
+    margin: 0 auto; 
+    display: block; 
+    width: 30%; 
+}
+
+button{
+    width: 30%;
+}
+#icon-list-footer img{
+    width: 30px;
+    height: auto;
+}
+
+footer {
+    bottom: 0;
+    width: 100%;
+    background-color: #e3e3e3;
+    padding: 20px 0;
+}
+
+#social-media-icons-div {
+    padding-top: 40px;
+    padding-bottom: 20px;
+
+}
+
+#customer-service-div a {
+    text-decoration: none;
+    color: black;
+}
+
+#customer-service-div a:hover {
+    text-decoration: underline;
+    color:black
+}
+
+.spacer {
+    height: 100px; 
+}
+
 .form-floating label {
 left: 10px;
 }
 
 /*CSS för customer service sidan! */
-
 .title {
     text-align: center;
     font-size: 3em;
@@ -40,7 +139,7 @@ left: 10px;
 }
 
 .faq-section{
-    padding: 4em 3em;   
+    padding: 4em 2em;   
 }
 
 .faq {
@@ -59,38 +158,12 @@ left: 10px;
 }
 
 .q {
-    padding: 1em 0; 
-    border-left: 10px #f2f2f2 solid;
+    padding: 1 em 0; 
+    border-left: 10 px #f2f2f2 solid;
     cursor: pointer;
 }
-.q:hover, .q:hover .arrow {
-    border-left-color: #2db9eb;
-}
-
-.arrow {
-    display: inline-block;
-    margin: 0 0.5em;
-    width: 0;
-    height: 0;
-    border-top: 6px solid transparent;
-    border-left: 10px solid #555;
-    border-bottom: 6px solid transparent;
-    transition: 0.3s;
-}
-.faq p {
-    color: #888;
-    line-height: 25px;
-}
-
-.a {
-    overflow: hidden;
-    height: 0;
-    padding: 0 1em 0 3.3em;
-}
-
-.a-opened{
-    padding: 1em 1em 2em 3.3em;
-    height: initial;
+.q:hover {
+    border-left-color: aqua;
 }
 
 
