@@ -50,13 +50,16 @@
                             <div class="collapse navbar-collapse" id="navbarNav">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Dam</a>
+                                        <a class="nav-link" id="womenCategory" href="#">Dam</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Herr</a>
+                                        <a class="nav-link" id="menCategory"  href="#">Herr</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">Home</a>
+                                        <a class="nav-link" id="jeweleryCategory"  href="#">Smycken</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" id="allCategories"  href="#">Allt</a>
                                     </li>
                                 </ul>
                             </div>
@@ -65,7 +68,7 @@
                 </div>
 
                 <div class="col-6 text-center">
-                    <h1>SALJ</h1>
+                    <h1 id="logo">SALJ</h1>
                 </div>
                 <div id="search-bar" class="col-3 d-none d-sm-block"> <!-- Dölj på sm och större -->
                     <form>
@@ -74,12 +77,13 @@
                 </div>
                 <!-- Hur får jag tillbaka search-bar när jag klickar på ikonen? 
                     Vill att sökbaren ska ta all plats i navbaren när man klickar på-->
-                <div id="search-icon" class="col-3 d-block d-sm-none d-flex justify-content-end"> <!-- Visa på mindre än sm -->
+                <div id="search-icon" class="col-3 d-block d-sm-none d-flex justify-content-end">
+                    <!-- Visa på mindre än sm -->
                     <button class="btn" type="button" onclick="toggleSearchBar()">
                         <i class="bi bi-search"></i> <!-- Bootstraps förstoringsglasikon -->
                     </button>
                 </div>
-                
+
             </div>
         </div>
     </header>
@@ -109,6 +113,13 @@
         <!-- Innuti denna div ska det finnas en titel och två bilder för vårnyheter för dam respektive herr -->
         <div class="spacer"></div>
 
+        <div class="container-fluid mt-5">
+            <div class="row g-4" id="cardsRow">
+                <!-- Här kommer de dynamiskt skapade korten att läggas till -->
+            </div>
+        </div>
+
+        <!--
         <div class="row">
             <div
                 class="col-sm-6 col-md-6 col-lg-6 img-fluid d-flex justify-content-end align-items-end justify-content-md-end align-items-md-end spring-new-column">
@@ -122,13 +133,14 @@
             </div>
         </div>
     </div>
-    <div class="spacer"></div>
+    -->
+        <div class="spacer"></div>
 
 
 
 
-    <footer>
-        <!--
+        <footer>
+            <!--
     1. Nyhetsbrev
     2. Sociala medier logo
     3. Länkar till kundservice mm
@@ -136,57 +148,61 @@
 
     Innehållet ska vara centrerat på sidan
    -->
-        <div id="container-footer" class="container text-center">
+            <div id="container-footer" class="container text-center">
 
-            <div class="d-flex flex-column align-items-center">
-                <label id="email-label-footer" for="exampleInputEmail1" class="form-label mt-4">Anmäl dig till
-                    nyhetsbrev!</label>
-                <input type="email" class="form-control" id="email-input-footer" aria-describedby="emailHelp"
-                    placeholder="Skriv in mail">
-                <small id="email-small-footer" class="form-text text-muted">10% vid nästa köp om du anmäler dig till
-                    nyhetsbrevet</small>
-                <button type="button" class="btn btn-primary mt-2">Anmäl</button>
-            </div>
+                <div class="d-flex flex-column align-items-center">
+                    <label id="email-label-footer" for="exampleInputEmail1" class="form-label mt-4">Anmäl dig till
+                        nyhetsbrev!</label>
+                    <input type="email" class="form-control" id="email-input-footer" aria-describedby="emailHelp"
+                        placeholder="Skriv in mail">
+                    <small id="email-small-footer" class="form-text text-muted">10% vid nästa köp om du anmäler dig till
+                        nyhetsbrevet</small>
+                    <button type="button" class="btn btn-primary mt-2">Anmäl</button>
+                </div>
 
 
-            <div id="social-media-icons-div" class="container-fluid d-flex flex-column">
-                <div class="row align-items-center">
-                    <div class="col">
-                        <nav>
-                            <ul id="icon-list-footer" class="list-inline">
-                                <li class="list-inline-item"><a href="#"><img src="icons\instagram.png"
-                                            alt="Instagram"></a>
-                                </li>
-                                <li class="list-inline-item"><a href="#"><img src="icons\facebook.png"
-                                            alt="Facebook"></a>
-                                </li>
-                                <li class="list-inline-item"><a href="#"><img src="icons\tik-tok.png" alt="Tiktok"></a>
-                                </li>
-                                <li class="list-inline-item"><a href="#"><img src="icons\twitter.png" alt="X"></a></li>
-                                <li class="list-inline-item"><a href="#"><img src="icons\youtube.png" alt="Youtube"></a>
-                                </li>
-                            </ul>
-                        </nav>
+                <div id="social-media-icons-div" class="container-fluid d-flex flex-column">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <nav>
+                                <ul id="icon-list-footer" class="list-inline">
+                                    <li class="list-inline-item"><a href="#"><img src="icons\instagram.png"
+                                                alt="Instagram"></a>
+                                    </li>
+                                    <li class="list-inline-item"><a href="#"><img src="icons\facebook.png"
+                                                alt="Facebook"></a>
+                                    </li>
+                                    <li class="list-inline-item"><a href="#"><img src="icons\tik-tok.png"
+                                                alt="Tiktok"></a>
+                                    </li>
+                                    <li class="list-inline-item"><a href="#"><img src="icons\twitter.png" alt="X"></a>
+                                    </li>
+                                    <li class="list-inline-item"><a href="#"><img src="icons\youtube.png"
+                                                alt="Youtube"></a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
                 </div>
+
+
+                <div id="customer-service-div">
+                    <a href="mailto:customerservice@salj.se">Kontakta kundtjänst</a>
+                </div>
+
+                <div id="copyright-footer" class="container">
+                    <span class="text-muted">&copy; 2024 SALJ. Alla rättigheter förbehållna.</span>
+                </div>
+
             </div>
+        </footer>
 
-
-            <div id="customer-service-div">
-                <a href="mailto:customerservice@salj.se">Kontakta kundtjänst</a>
-            </div>
-
-            <div id="copyright-footer" class="container">
-                <span class="text-muted">&copy; 2024 SALJ. Alla rättigheter förbehållna.</span>
-            </div>
-
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-        crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+            integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+            crossorigin="anonymous"></script>
 </body>
 
 
