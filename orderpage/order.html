@@ -88,6 +88,21 @@
         </form>
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            let getImg = localStorage.getItem('image');
+            let getTitle = localStorage.getItem("title");
+            let getDesc = localStorage.getItem('description');
+            let getPrice = localStorage.getItem("price");
+
+            console.log('Src for picture:', getImg)
+            console.log('Titeltexten är: ', getTitle);
+            console.log(getDesc)
+            console.log(getPrice)
+
+        });
+    </script>
 </body>
 
 </html>

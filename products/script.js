@@ -4,7 +4,7 @@ $(document).ready(function () {
     function createCard(id, image, title, description, price) {
         return `
 
-        <div class="col-6 col-sm-6 col-md-4 col-lg-3">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card h-100">
             <img src="${image}" class="card-img-top" alt="...">
             <div class="card-body">
@@ -29,7 +29,8 @@ $(document).ready(function () {
                     </div>
                 </div>
                 <small class="text-muted">$${price}</small>
-                <a class="btn btn-outline-dark my-2" href="orderpage\order.html" role="button">Beställ</a>
+                <a class="btn btn-outline-dark my-2 order-btn" href="" role="button">Beställ</a>
+                
             </div>
         </div>
     </div>
@@ -53,10 +54,38 @@ $(document).ready(function () {
                         const cardHTML = createCard(id, img, title, description, price);
                         cardsGroup.append(cardHTML);
                     }
+
+                    $('.order-btn').click(function(event) {
+                      event.preventDefault();
+
+                      let card = $(this).closest('.card')
+
+                      let productImg = card.find('img.card-img-top').attr('src');
+                      let productTitle = card.find('h5.card-title').text();
+                      let productDescr = card.find('.accordion-body').text();
+                      let productPrice = card.find('small.text-muted').text();
+
+                      localStorage.setItem('image', productImg);
+                      localStorage.setItem("title", productTitle);
+                      localStorage.setItem('description', productDescr);
+                      localStorage.setItem('price', productPrice);
+
+                      // FUNKAR!!!
+                      let getImg = localStorage.getItem('image');
+                      let getTitle = localStorage.getItem("title");
+                      let getDesc = localStorage.getItem('description');
+                      let getPrice = localStorage.getItem("price");
+                      
+                      console.log(getImg);
+                      console.log(getTitle);
+                      console.log(getDesc);
+                      console.log(getPrice);
+                      
+                  });
+
                 })
                 .catch(error => console.error("Error fetching random product:", error));
     }
-
-    // Anropa funktionen för att lägga till fler "card" divar
     addCards(20);
+  
 });
