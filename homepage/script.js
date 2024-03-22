@@ -41,6 +41,13 @@ const categoryWomen = `https://fakestoreapi.com/products/category/${womensClothi
 const categoryMen = `https://fakestoreapi.com/products/category/${mensClothing}?limit=${numCards}`;
 */
 
+//remove child elements before fetch new products
+const parent = document.getElementById('cardsRow');
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
 
 //Hämtar elementene som ska få event listeners
 const womensCat = document.getElementById('womenCategory');
@@ -59,6 +66,7 @@ const numCards = 20;
 
 function fetchWomens() {
     console.log('womens category');
+    removeAllChildNodes(parent);
     fetchItems(`https://fakestoreapi.com/products/category/${womensClothing}?limit=${numCards}`);
 }
 
@@ -66,6 +74,7 @@ mensCat.addEventListener('click', fetchMens);
 
 function fetchMens() {
     console.log('mens category');
+    removeAllChildNodes(parent);
     fetchItems(`https://fakestoreapi.com/products/category/${mensClothing}?limit=${numCards}`);
 }
 
@@ -73,15 +82,17 @@ jeweleryCat.addEventListener('click', fetchJewelary);
 
 function fetchJewelary() {
     console.log('jewelery category');
+    removeAllChildNodes(parent);
     fetchItems('https://fakestoreapi.com/products/category/jewelery?limit=${numCards}')
 }
 
 allCategories.addEventListener('click', fetchAll);
-
 function fetchAll() {
     console.log('all categories');
+    removeAllChildNodes(parent);
     fetchItems('https://fakestoreapi.com/products?limit=${numCards}');
 }
+
 
 // fetchen ligger i en funktion, så inget laddas förrän man kallar på den yttersta funktionen i eventen.
 
@@ -125,24 +136,24 @@ function fetchItems(path) {
 
         function addCards(numCards) {
             const cardsGroup = $("#cardsRow");
-            
-                fetch(path)
-                    .then(response => response.json())
-                    .then(data => {
-                        for (let x = 0; x < numCards; x++) {
-                            const id = data[x].id;
-                            const img = data[x].image;
-                            const title = data[x].title;
-                            const description = data[x].description;
-                            const price = data[x].price;
-                            // Skapa ett nytt "card" div-element och lägg till det i raden
-                            const cardHTML = createCard(id, img, title, description, price);
-                            cardsGroup.append(cardHTML);
-                        }
-                    })
-                    .catch(error => console.error("Error fetching random product:", error));
+
+            fetch(path)
+                .then(response => response.json())
+                .then(data => {
+                    for (let x = 0; x < numCards; x++) {
+                        const id = data[x].id;
+                        const img = data[x].image;
+                        const title = data[x].title;
+                        const description = data[x].description;
+                        const price = data[x].price;
+                        // Skapa ett nytt "card" div-element och lägg till det i raden
+                        const cardHTML = createCard(id, img, title, description, price);
+                        cardsGroup.append(cardHTML);
+                    }
+                })
+                .catch(error => console.error("Error fetching random product:", error));
         }
-    
+
         // Anropa funktionen för att lägga till fler "card" divar
         addCards(20);
 
