@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // If all validation passes, submit the form
+        // Om allt stämmer!
         form.submit();
     });
 
