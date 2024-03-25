@@ -1,4 +1,5 @@
 
+
 let isRotated = false;
 
 function rotateImage() {
@@ -41,64 +42,14 @@ const categoryWomen = `https://fakestoreapi.com/products/category/${womensClothi
 const categoryMen = `https://fakestoreapi.com/products/category/${mensClothing}?limit=${numCards}`;
 */
 
-//remove child elements before fetch new products
-const parent = document.getElementById('cardsRow');
-function removeAllChildNodes(parent) {
-    while (parent.firstChild) {
-        parent.removeChild(parent.firstChild);
-    }
-}
-
-//Hämtar elementene som ska få event listeners
-const womensCat = document.getElementById('womenCategory');
-const mensCat = document.getElementById('menCategory');
-const jeweleryCat = document.getElementById('jeweleryCategory');
-const allCategories = document.getElementById('allCategories');
-
-// variabler till fetch-url
-const womensClothing = encodeURIComponent("women's clothing");
-const mensClothing = encodeURIComponent("men's clothing");
-
-
-//event listeners för kategorierna
-womensCat.addEventListener('click', fetchWomens);
-const numCards = 20;
-
-function fetchWomens() {
-    console.log('womens category');
-    removeAllChildNodes(parent);
-    fetchItems(`https://fakestoreapi.com/products/category/${womensClothing}?limit=${numCards}`);
-}
-
-mensCat.addEventListener('click', fetchMens);
-
-function fetchMens() {
-    console.log('mens category');
-    removeAllChildNodes(parent);
-    fetchItems(`https://fakestoreapi.com/products/category/${mensClothing}?limit=${numCards}`);
-}
-
-jeweleryCat.addEventListener('click', fetchJewelary);
-
-function fetchJewelary() {
-    console.log('jewelery category');
-    removeAllChildNodes(parent);
-    fetchItems('https://fakestoreapi.com/products/category/jewelery?limit=${numCards}')
-}
-
-allCategories.addEventListener('click', fetchAll);
-function fetchAll() {
-    console.log('all categories');
-    removeAllChildNodes(parent);
-    fetchItems('https://fakestoreapi.com/products?limit=${numCards}');
-}
-
 
 // fetchen ligger i en funktion, så inget laddas förrän man kallar på den yttersta funktionen i eventen.
 
-function fetchItems(path) {
 
-    $(document).ready(function () {
+$(document).ready(function () {
+
+    function fetchItems(path) {
+
 
         function createCard(id, image, title, description, price) {
             return (
@@ -127,7 +78,7 @@ function fetchItems(path) {
                             </div>
                         </div>
                         <small class="text-muted">$${price}</small>
-                        <a class="btn btn-outline-dark my-2"href="../orderpage/order.html" role="button">Beställ</a>
+                        <a class="btn order-btn btn-outline-dark my-2"href="../orderpage/order.html?id=${id}" role="button">Beställ</a>
                     </div>
                 </div>
             </div>`
@@ -150,6 +101,39 @@ function fetchItems(path) {
                         const cardHTML = createCard(id, img, title, description, price);
                         cardsGroup.append(cardHTML);
                     }
+
+                    $('.order-btn').click(function (event) {
+                        event.preventDefault();
+                    
+                        let card = $(this).closest('.card')
+                    
+                        let productImg = card.find('img.card-img-top').attr('src');
+                        let productTitle = card.find('h5.card-title').text();
+                        let productDescr = card.find('.accordion-body').text();
+                        let productPrice = card.find('small.text-muted').text();
+                    
+                        console.log(productTitle)
+                    
+                        localStorage.setItem('image', productImg);
+                        localStorage.setItem("title", productTitle);
+                        localStorage.setItem('description', productDescr);
+                        localStorage.setItem('price', productPrice);
+                    
+                        // FUNKAR!!!
+                        let getImg = localStorage.getItem('image');
+                        let getTitle = localStorage.getItem("title");
+                        let getDesc = localStorage.getItem('description');
+                        let getPrice = localStorage.getItem("price");
+                    
+                        console.log(getImg);
+                        console.log(getTitle);
+                        console.log(getDesc);
+                        console.log(getPrice);
+                        console.log(localStorage);
+                    
+                    });
+                    
+
                 })
                 .catch(error => console.error("Error fetching random product:", error));
         }
@@ -157,8 +141,61 @@ function fetchItems(path) {
         // Anropa funktionen för att lägga till fler "card" divar
         addCards(20);
 
+    } //fetchItems
 
-    });
+        //remove child elements before fetch new products
+        const parent = document.getElementById('cardsRow');
+        function removeAllChildNodes(parent) {
+            while (parent.firstChild) {
+                parent.removeChild(parent.firstChild);
+            }
+        }
+    
+        //Hämtar elementene som ska få event listeners
+        const womensCat = document.getElementById('womenCategory');
+        const mensCat = document.getElementById('menCategory');
+        const jeweleryCat = document.getElementById('jeweleryCategory');
+        const allCategories = document.getElementById('allCategories');
+    
+        // variabler till fetch-url
+        const womensClothing = encodeURIComponent("women's clothing");
+        const mensClothing = encodeURIComponent("men's clothing");
+    
+    
+        //event listeners för kategorierna
+        womensCat.addEventListener('click', fetchWomens);
+        const numCards = 20;
+    
+        function fetchWomens() {
+            console.log('womens category');
+            removeAllChildNodes(parent);
+            fetchItems(`https://fakestoreapi.com/products/category/${womensClothing}?limit=${numCards}`);
+        }
+    
+        mensCat.addEventListener('click', fetchMens);
+    
+        function fetchMens() {
+            console.log('mens category');
+            removeAllChildNodes(parent);
+            fetchItems(`https://fakestoreapi.com/products/category/${mensClothing}?limit=${numCards}`);
+        }
+    
+        jeweleryCat.addEventListener('click', fetchJewelary);
+    
+        function fetchJewelary() {
+            console.log('jewelery category');
+            removeAllChildNodes(parent);
+            fetchItems('https://fakestoreapi.com/products/category/jewelery?limit=${numCards}')
+        }
+    
+        allCategories.addEventListener('click', fetchAll);
+    
+        function fetchAll() {
+            console.log('all categories');
+            removeAllChildNodes(parent);
+            fetchItems('https://fakestoreapi.com/products?limit=${numCards}');
+        }
 
-}
+    fetchAll();
 
+}); //document.ready
