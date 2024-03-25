@@ -193,3 +193,23 @@ left: 10px;
 }
 
 
+.card-img-top {
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
+}
+
+.card {
+    border-color: transparent;
+    border-radius: 0;
+}
+
+
+.card:hover {
+    border-color: black;
+}
+
+.card-footer {
+    background-color:white;
+    border-top: transparent;
+}

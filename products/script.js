@@ -29,7 +29,7 @@ $(document).ready(function () {
                     </div>
                 </div>
                 <small class="text-muted">$${price}</small>
-                <a class="btn btn-outline-dark my-2 order-btn" href="" role="button">Beställ</a>
+                <a class="btn btn-outline-dark my-2 order-btn" href="../orderpage/order.html" role="button">Beställ</a>
                 
             </div>
         </div>
