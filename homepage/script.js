@@ -127,7 +127,7 @@ $(document).ready(function () {
                 .catch(error => console.error("Error fetching random product:", error));
     }
 
-    $('#womenCategory').click(function () {
+    $('#womensCategory').click(function () {
        
         const womensClothing = encodeURIComponent("women's clothing");
         $("#cardsRow").empty(); // Clear existing cards
@@ -145,4 +145,10 @@ $(document).ready(function () {
     
         $("#cardsRow").empty(); // Clear existing cards
         addCards(`https://fakestoreapi.com/products/category/jewelery`);
+    });
+
+    $('#allCategories').click(function () {
+    
+        $("#cardsRow").empty(); // Clear existing cards
+        addCards(`https://fakestoreapi.com/products`);
     });
