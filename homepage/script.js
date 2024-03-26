@@ -78,7 +78,7 @@ $(document).ready(function () {
                     </div>
                 </div>
                 <small class="text-muted">$${price}</small>
-                <a class="btn btn-outline-dark my-2 order-btn" href="../orderpage/order.html" role="button">Beställ</a>
+                <a class="btn btn-outline-dark my-2 order-btn" href="../orderpage/order.html?id=${id}" role="button">Beställ</a>
                 
             </div>
         </div>
@@ -106,34 +106,6 @@ $(document).ready(function () {
                         cardsGroup.append(cardHTML);
 
                     });
-
-                    $('.order-btn').click(function(event) {
-                     // event.preventDefault();
-
-                      let card = $(this).closest('.card')
-
-                      let productImg = card.find('img.card-img-top').attr('src');
-                      let productTitle = card.find('h5.card-title').text();
-                      let productDescr = card.find('.accordion-body').text();
-                      let productPrice = card.find('small.text-muted').text();
-
-                      localStorage.setItem('image', productImg);
-                      localStorage.setItem("title", productTitle);
-                      localStorage.setItem('description', productDescr);
-                      localStorage.setItem('price', productPrice);
-
-                      // FUNKAR!!!
-                      let getImg = localStorage.getItem('image');
-                      let getTitle = localStorage.getItem("title");
-                      let getDesc = localStorage.getItem('description');
-                      let getPrice = localStorage.getItem("price");
-                      
-                      console.log(getImg);
-                      console.log(getTitle);
-                      console.log(getDesc);
-                      console.log(getPrice);
-                      
-                  });
 
                 })
                 .catch(error => console.error("Error fetching random product:", error));
