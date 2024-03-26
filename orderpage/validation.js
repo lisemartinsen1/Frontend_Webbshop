@@ -1,18 +1,22 @@
 
 
 document.addEventListener("DOMContentLoaded", function () {
-
+    
+    const form = document.querySelector("form");
     let orderButton = document.getElementById('orderButton');
-    orderButton.addEventListener('click', function(event) {
+
+    form.orderButton.addEventListener('click', function(event) {
         event.preventDefault();
 
         // Validera epost
         const emailInput = document.querySelector("input[name='email']");
         const emailValue = emailInput.value.trim();
+
         if (!emailValue.includes("@") || emailValue.length > 50) {
             alert("Vänligen ange en giltig e-postadress (max 50 tecken).");
-            return;
+            return;    
         }
+
 
         //Validera förnamn
         const firstNameInput = document.querySelector("input[name='fname']");
@@ -75,3 +79,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+

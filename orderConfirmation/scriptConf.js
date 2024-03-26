@@ -22,6 +22,7 @@ $(document).ready(function () {
                 localStorage.setItem('price', price);
                 
                 getPrice();
+                getEmail();
 
         })
         .catch(error => console.error("Error fetching random product:", error));
@@ -48,7 +49,13 @@ function createCard(id, image, title, description, price) {
 
 function getPrice() {
     const price = localStorage.getItem('price');
-    
     const totalPay = document.getElementById('totalpay');
     totalPay.textContent = `Totalbelopp: $${price}`; 
+}
+
+
+function getEmail() {
+    const email = localStorage.getItem('email');
+    const sendTo = document.getElementById('send');
+    sendTo.textContent = `En bekräftelse kommer att skickas till: ${email}`;
 }
