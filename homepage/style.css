@@ -227,3 +227,17 @@ footer {
     justify-content: center;
     align-items: center;
 }
+
+.card-wrapper {
+    display: flex;
+}
+
+.image-container,
+.content-container {
+    flex: 1;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+}
