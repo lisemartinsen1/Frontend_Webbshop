@@ -211,4 +211,8 @@ footer {
     border-top: transparent;
 }
 
+.form-floating label {
+    margin-left: 10px; 
+}
+
 
