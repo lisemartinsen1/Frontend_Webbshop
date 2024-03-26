@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector("form");
     let orderButton = document.getElementById('orderButton');
 
-    form.orderButton.addEventListener('click', function(event) {
+    form.addEventListener('submit', function(event) {
         event.preventDefault();
 
         // Validera epost
