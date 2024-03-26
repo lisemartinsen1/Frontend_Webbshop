@@ -216,3 +216,14 @@ footer {
 }
 
 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#done {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
