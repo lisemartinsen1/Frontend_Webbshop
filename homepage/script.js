@@ -1,14 +1,3 @@
-let getImg = localStorage.getItem('image');
-            let getTitle = localStorage.getItem("title");
-            let getDesc = localStorage.getItem('description');
-            let getPrice = localStorage.getItem('price');
-
-            console.log('Src for picture:', getImg)
-            console.log('Titeltexten är: ', getTitle);
-            console.log(getDesc)
-            console.log(getPrice)
-            
-            console.log(localStorage)
             
 let isRotated = false;
 
