@@ -20,7 +20,7 @@ $(document).ready(function () {
                 const cardHTML = createCard(id, img, title, description, price);
                 cardInput.append(cardHTML);
 
-                localStorage.setItem('id', id);
+                localStorage.setItem('price', price);
 
         })
         .catch(error => console.error("Error fetching random product:", error));
