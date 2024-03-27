@@ -247,6 +247,10 @@ footer {
 
 /*--------------------*/
 
+#category-header {
+    background-color: rgb(247, 216, 232);
+    background-color: #f3ede6;
+}
 
 /* ------------------- CSS för SlideShow -----------------------*/
 
@@ -255,6 +259,7 @@ footer {
     max-width: 100%;
     margin: auto;
     overflow: hidden;
+    
 }
 
 .slide {

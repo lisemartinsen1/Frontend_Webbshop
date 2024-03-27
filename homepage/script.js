@@ -35,7 +35,7 @@ for (let i = 0; i < q.length; i++) {
 $(document).ready(function () {
     addCards(`https://fakestoreapi.com/products`);
     initializeSlider();
-    addCategoryHeader("ALLA");
+    addCategoryHeader("ALLA PRODUKTER");
 });
 
 
@@ -131,7 +131,7 @@ $('#allCategories').click(function () {
 
     $("#cardsRow").empty(); // Clear existing cards
     $("#slideshow").empty(); // Clear image
-    addCategoryHeader("ALLA");
+    addCategoryHeader("ALLA PRODUKTER");
     addCards(`https://fakestoreapi.com/products`);
 });
 
@@ -144,7 +144,7 @@ $('#salj-icon').click(function () {
     addSlideShow(); //add the slideshow again
     initializeSlider();
 
-    addCategoryHeader("ALLA")
+    addCategoryHeader("ALLA PRODUKTER")
     addCards(`https://fakestoreapi.com/products`);
 
 });
@@ -152,7 +152,7 @@ $('#salj-icon').click(function () {
 
 function addCategoryHeader(text) {
     const headerDiv = $("#category-header");
-    const header = `<h2>${text}</h2>`;
+    const header = `<h4>${text}</h4>`;
     headerDiv.html(header);
 }
 

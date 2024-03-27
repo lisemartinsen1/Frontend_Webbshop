@@ -67,7 +67,7 @@
                     </nav>
                 </div>
                 <div class="col-6 text-center">
-                    <a href="#" id="salj-icon" class="h1 logo link-underline link-underline-opacity-0">SALJ</a>
+                    <a href="#" id="salj-icon" class="h1 logo link-underline link-underline-opacity-0">S A L J</a>
                 </div>
                 <div id="search-bar" class="col-3 d-none d-sm-block"> <!-- Dölj på sm och större -->
                     <form>
@@ -106,40 +106,36 @@
         </div>
     </div> -->
 
-
-    <div class="slideshow row" id="slideshow">
-        <div class="col">
-        <div class="slides">
-            <img class="slide" src="images/cat-han-JSGcF7g_67E-unsplash.jpg" alt="">
-            <img class="slide" src="images/james-ree-ZmeFtu11Hpc-unsplash.jpg" alt="">
-            <img class="slide" src="images/mostafa-mahmoudi-J4DnKxz_3sA-unsplash.jpg" alt="">
-        </div>
-        <button class="prev" onclick="prevSlide()">&#10094</button>
-        <button class="next" onclick="nextSlide()">&#10095</button>
-    </div>
+    <div class="slideshow" id="slideshow">
+            <div class="slides">
+                <img class="slide" src="images/cat-han-JSGcF7g_67E-unsplash.jpg" alt="">
+                <img class="slide" src="images/james-ree-ZmeFtu11Hpc-unsplash.jpg" alt="">
+                <img class="slide" src="images/mostafa-mahmoudi-J4DnKxz_3sA-unsplash.jpg" alt="">
+            </div>
+            <button class="prev" onclick="prevSlide()">&#10094</button>
+            <button class="next" onclick="nextSlide()">&#10095</button>
     </div>
 
-    <div id="category-header" class="text-center pt-5">
+    <div id="category-header" class="container-fluid text-center py-5 my-3">
         <!-- Här läggs rubrik för kategori -->
     </div>
 
+
+    <!-- Innuti denna div ska det finnas en titel och två bilder för vårnyheter för dam respektive herr -->
+
     <div class="container-fluid">
-
-        <!-- Innuti denna div ska det finnas en titel och två bilder för vårnyheter för dam respektive herr -->
-
-        <div class="container-fluid mt-5">
-            <div class="row g-5" id="cardsRow">
-                <!-- Här kommer de dynamiskt skapade korten att läggas till -->
-            </div>
+        <div class="row g-5" id="cardsRow">
+            <!-- Här kommer de dynamiskt skapade korten att läggas till -->
         </div>
+    </div>
 
-        <div class="spacer"></div>
+    <div class="spacer"></div>
 
 
 
 
-        <footer>
-            <!--
+    <footer>
+        <!--
     1. Nyhetsbrev
     2. Sociala medier logo
     3. Länkar till kundservice mm
@@ -147,58 +143,58 @@
 
     Innehållet ska vara centrerat på sidan
    -->
-            <div id="container-footer" class="container text-center">
+        <div id="container-footer" class="container text-center">
 
-                <div class="d-flex flex-column align-items-center">
-                    <label id="email-label-footer" for="exampleInputEmail1" class="form-label mt-4">Anmäl dig till
-                        nyhetsbrev!</label>
-                    <div class="input-group mb-3 justify-content-center">
-                        <input type="text" class="form-control input-grouped" placeholder="E-mail" aria-label="E-mail"
-                            aria-describedby="button-addon2">
-                        <button class="btn btn-dark btn-sm btn-grouped" type="button" id="button-addon2">Anmäl</button>
-                    </div>
-                    <small id="email-small-footer" class="form-text text-muted">10% vid nästa köp om du anmäler dig till
-                        nyhetsbrevet</small>
+            <div class="d-flex flex-column align-items-center">
+                <label id="email-label-footer" for="exampleInputEmail1" class="form-label mt-4">Anmäl dig till
+                    nyhetsbrev!</label>
+                <div class="input-group mb-3 justify-content-center">
+                    <input type="text" class="form-control input-grouped" placeholder="E-mail" aria-label="E-mail"
+                        aria-describedby="button-addon2">
+                    <button class="btn btn-dark btn-sm btn-grouped" type="button" id="button-addon2">Anmäl</button>
                 </div>
-
-                <div id="social-media-icons-div" class="container-fluid d-flex flex-column">
-                    <div class="row align-items-center">
-                        <div class="col">
-                            <nav>
-                                <ul id="icon-list-footer" class="list-inline">
-                                    <li class="list-inline-item"><a href="#"><i class="bi bi-instagram"></i></a>
-                                    </li>
-                                    <li class="list-inline-item"><a href="#"><i class="bi bi-facebook"></i></a>
-                                    </li>
-                                    <li class="list-inline-item"><a href="#"><i class="bi bi-tiktok"></i></a>
-                                    </li>
-                                    <li class="list-inline-item"><a href="#"><i class="bi bi-twitter-x"></i></a>
-                                    </li>
-                                    <li class="list-inline-item"><a href="#"><i class="bi bi-youtube"></i></a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div id="customer-service-div">
-                    <a href="mailto:customerservice@salj.se">Kontakta kundtjänst</a>
-                </div>
-
-                <div id="copyright-footer" class="container">
-                    <span class="text-muted">&copy; 2024 SALJ. Alla rättigheter förbehållna.</span>
-                </div>
-
+                <small id="email-small-footer" class="form-text text-muted">10% vid nästa köp om du anmäler dig till
+                    nyhetsbrevet</small>
             </div>
-        </footer>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="script.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-            integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-            crossorigin="anonymous"></script>
+            <div id="social-media-icons-div" class="container-fluid d-flex flex-column">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <nav>
+                            <ul id="icon-list-footer" class="list-inline">
+                                <li class="list-inline-item"><a href="#"><i class="bi bi-instagram"></i></a>
+                                </li>
+                                <li class="list-inline-item"><a href="#"><i class="bi bi-facebook"></i></a>
+                                </li>
+                                <li class="list-inline-item"><a href="#"><i class="bi bi-tiktok"></i></a>
+                                </li>
+                                <li class="list-inline-item"><a href="#"><i class="bi bi-twitter-x"></i></a>
+                                </li>
+                                <li class="list-inline-item"><a href="#"><i class="bi bi-youtube"></i></a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="customer-service-div">
+                <a href="mailto:customerservice@salj.se">Kontakta kundtjänst</a>
+            </div>
+
+            <div id="copyright-footer" class="container">
+                <span class="text-muted">&copy; 2024 SALJ. Alla rättigheter förbehållna.</span>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
