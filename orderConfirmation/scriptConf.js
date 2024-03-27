@@ -31,20 +31,19 @@ $(document).ready(function () {
 
 function createCard(id, image, title, description, price) {
     return `
-
-                <div class="col-12">
-                    <img src="${image}" alt="product image">
-                </div>
-                <div class="col-12">
-                    <h3>${title}</h3>
-                </div>
-                <div class="col-12">
-                    <p>${description}</p>
-                </div>
-                <div class="col-12">
-                    <h5>$${price}</h5>
-                </div>
-`;
+        <div class="row">
+            <div class="col-4">
+                <img src="${image}" alt="product image" class="img-fluid" style="max-width: 100px; max-height: 100px;">
+            </div>
+            <div class="col-4">
+                <h3>${title}</h3>
+                <p>${description}</p>
+            </div>
+            <div class="col-4">
+                <h5>$${price}</h5>
+            </div>
+        </div>
+    `;
 }
 
 function getPrice() {

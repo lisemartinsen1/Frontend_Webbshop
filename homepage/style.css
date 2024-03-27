@@ -215,4 +215,17 @@ footer {
     margin-left: 10px; 
 }
 
+#done {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.card-wrapper {
+    display: flex;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+}
