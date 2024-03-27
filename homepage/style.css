@@ -92,9 +92,12 @@ color: black;
     width: 30%; 
 }
 
+/*
 button{
     width: 30%;
 }
+*/
+
 #icon-list-footer img{
     width: 30px;
     height: auto;
@@ -241,3 +244,44 @@ footer {
     max-width: 100%;
     height: auto;
 }
+
+/* ------------------- CSS för SlideShow -----------------------*/
+
+.slideshow {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slide {
+    width: 100%;
+    display: none;
+}
+
+img.displaySlide {
+    display: block;
+}
+
+.slideshow button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    padding: 10px 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+/* -------------------------------------------------------------- */
+

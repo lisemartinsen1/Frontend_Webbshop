@@ -1,4 +1,4 @@
-            
+
 let isRotated = false;
 
 function rotateImage() {
@@ -13,7 +13,7 @@ function rotateImage() {
 }
 
 function toggleSearchBar() {
-    
+
 }
 
 
@@ -21,7 +21,7 @@ const q = document.querySelectorAll('.q');
 const a = document.querySelectorAll('.a');
 const arr = document.querySelectorAll('.arrow');
 
-for(let i = 0; i < q.length; i++){
+for (let i = 0; i < q.length; i++) {
     q[i].addEventListener('click', () => {
 
         a[i].classList.toggle('a-opened');
@@ -38,9 +38,9 @@ $(document).ready(function () {
 });
 
 
-    // Funktion för att skapa ett "card" div-element med slumpmässig personinformation
-    function createCard(id, image, title, description, price) {
-        return `
+// Funktion för att skapa ett "card" div-element med slumpmässig personinformation
+function createCard(id, image, title, description, price) {
+    return `
 
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card h-100">
@@ -73,57 +73,100 @@ $(document).ready(function () {
         </div>
     </div>
         `;
+}
+
+
+// Funktion för att lägga till fler "card" divar
+function addCards(path) {
+    const cardsGroup = $("#cardsRow");
+
+    fetch(path)
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(data => {
+
+                const id = data.id;
+                const img = data.image;
+                const title = data.title;
+                const description = data.description;
+                const price = data.price;
+                // Skapa ett nytt "card" div-element och lägg till det i raden
+                const cardHTML = createCard(id, img, title, description, price);
+                cardsGroup.append(cardHTML);
+
+            });
+
+        })
+        .catch(error => console.error("Error fetching random product:", error));
+}
+
+$('#womensCategory').click(function () {
+
+    const womensClothing = encodeURIComponent("women's clothing");
+    $("#cardsRow").empty(); // Clear existing cards
+    addCards(`https://fakestoreapi.com/products/category/${womensClothing}`);
+});
+
+$('#mensCategory').click(function () {
+
+    const mensClothing = encodeURIComponent("men's clothing");
+    $("#cardsRow").empty(); // Clear existing cards
+    addCards(`https://fakestoreapi.com/products/category/${mensClothing}`);
+});
+
+$('#jeweleryCategory').click(function () {
+
+    $("#cardsRow").empty(); // Clear existing cards
+    addCards(`https://fakestoreapi.com/products/category/jewelery`);
+});
+
+$('#allCategories').click(function () {
+
+    $("#cardsRow").empty(); // Clear existing cards
+    addCards(`https://fakestoreapi.com/products`);
+});
+
+
+
+//------------------------ JavaScript SlideShow ------------------------
+
+const slides = document.querySelectorAll('.slides img');
+let slideIndex = 0;
+let intervalId = null;
+
+document.addEventListener("DOMContentLoaded", initializeSlider());
+
+function initializeSlider() {
+    if (slides.length > 0) {
+        slides[slideIndex].classList.add("displaySlide");
+        intervalId = setInterval(nextSlide, 5000);
+    }
+}
+
+function showSlide(index) {
+
+    if(index >= slides.length){
+        slideIndex = 0;
+    } else if( index < 0) {
+        slideIndex = slides.length - 1;
     }
 
-    
-    // Funktion för att lägga till fler "card" divar
-    function addCards(path) {
-        const cardsGroup = $("#cardsRow");
-        
-            fetch(path)
-                .then(response => response.json())
-                .then(data => {
-                    data.forEach(data => {
-                   
-                        const id = data.id;
-                        const img = data.image;
-                        const title = data.title;
-                        const description = data.description;
-                        const price = data.price;
-                        // Skapa ett nytt "card" div-element och lägg till det i raden
-                        const cardHTML = createCard(id, img, title, description, price);
-                        cardsGroup.append(cardHTML);
-
-                    });
-
-                })
-                .catch(error => console.error("Error fetching random product:", error));
-    }
-
-    $('#womensCategory').click(function () {
-       
-        const womensClothing = encodeURIComponent("women's clothing");
-        $("#cardsRow").empty(); // Clear existing cards
-        addCards(`https://fakestoreapi.com/products/category/${womensClothing}`);
+    slides.forEach(slide => {
+        slide.classList.remove("displaySlide");
     });
 
-    $('#mensCategory').click(function () {
-       
-        const mensClothing = encodeURIComponent("men's clothing");
-        $("#cardsRow").empty(); // Clear existing cards
-        addCards(`https://fakestoreapi.com/products/category/${mensClothing}`);
-    });
+    slides[slideIndex].classList.add("displaySlide");
+}
 
-    $('#jeweleryCategory').click(function () {
-    
-        $("#cardsRow").empty(); // Clear existing cards
-        addCards(`https://fakestoreapi.com/products/category/jewelery`);
-    });
+function prevSlide() {
+    clearInterval(intervalId)
+    slideIndex--;
+    showSlide(slideIndex);
+}
 
-    $('#allCategories').click(function () {
-    
-        $("#cardsRow").empty(); // Clear existing cards
-        addCards(`https://fakestoreapi.com/products`);
-    });
+function nextSlide() {
+    slideIndex++;
+    showSlide(slideIndex);
+}
 
- 
+// ------------------------------------------------------------------
