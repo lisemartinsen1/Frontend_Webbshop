@@ -229,3 +229,19 @@ footer {
     max-width: 100%;
     height: auto;
 }
+
+.max-size{
+    max-height: 100px;
+    width: auto;
+}
+
+.order-image-size{
+    max-height: 300px;
+    width: auto;
+    padding: 10%;
+}
+
+.price-size{
+    font-size: 25px;
+    margin-left: 30%;
+}
