@@ -229,3 +229,17 @@ footer {
     max-width: 100%;
     height: auto;
 }
+
+
+/*Footer*/
+.btn-grouped{
+    width: fit-content;
+}
+
+.input-grouped{
+    max-width: 210px;
+}
+
+.bi{
+    font-size:x-large;
+}
