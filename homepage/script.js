@@ -1,4 +1,4 @@
-            
+
 let isRotated = false;
 
 function rotateImage() {
@@ -10,18 +10,18 @@ function rotateImage() {
     } else {
         hamburgerIcon.style.transform = 'rotate(0deg)';
     }
-}
+};
 
 function toggleSearchBar() {
-    
-}
+
+};
 
 
 const q = document.querySelectorAll('.q');
 const a = document.querySelectorAll('.a');
 const arr = document.querySelectorAll('.arrow');
 
-for(let i = 0; i < q.length; i++){
+for (let i = 0; i < q.length; i++) {
     q[i].addEventListener('click', () => {
 
         a[i].classList.toggle('a-opened');
@@ -38,9 +38,9 @@ $(document).ready(function () {
 });
 
 
-    // Funktion för att skapa ett "card" div-element med slumpmässig personinformation
-    function createCard(id, image, title, description, price) {
-        return `
+// Funktion för att skapa ett "card" div-element med slumpmässig personinformation
+function createCard(id, image, title, description, price) {
+    return `
 
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
         <div class="card h-100">
@@ -73,57 +73,82 @@ $(document).ready(function () {
         </div>
     </div>
         `;
-    }
+};
 
-    
-    // Funktion för att lägga till fler "card" divar
-    function addCards(path) {
-        const cardsGroup = $("#cardsRow");
-        
-            fetch(path)
-                .then(response => response.json())
-                .then(data => {
-                    data.forEach(data => {
-                   
-                        const id = data.id;
-                        const img = data.image;
-                        const title = data.title;
-                        const description = data.description;
-                        const price = data.price;
-                        // Skapa ett nytt "card" div-element och lägg till det i raden
-                        const cardHTML = createCard(id, img, title, description, price);
-                        cardsGroup.append(cardHTML);
 
-                    });
+// Funktion för att lägga till fler "card" divar
+function addCards(path) {
+    const cardsGroup = $("#cardsRow");
 
-                })
-                .catch(error => console.error("Error fetching random product:", error));
-    }
+    fetch(path)
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(data => {
 
-    $('#womensCategory').click(function () {
-       
-        const womensClothing = encodeURIComponent("women's clothing");
-        $("#cardsRow").empty(); // Clear existing cards
-        addCards(`https://fakestoreapi.com/products/category/${womensClothing}`);
-    });
+                const id = data.id;
+                const img = data.image;
+                const title = data.title;
+                const description = data.description;
+                const price = data.price;
+                // Skapa ett nytt "card" div-element och lägg till det i raden
+                const cardHTML = createCard(id, img, title, description, price);
+                cardsGroup.append(cardHTML);
 
-    $('#mensCategory').click(function () {
-       
-        const mensClothing = encodeURIComponent("men's clothing");
-        $("#cardsRow").empty(); // Clear existing cards
-        addCards(`https://fakestoreapi.com/products/category/${mensClothing}`);
-    });
+            });
 
-    $('#jeweleryCategory').click(function () {
-    
-        $("#cardsRow").empty(); // Clear existing cards
-        addCards(`https://fakestoreapi.com/products/category/jewelery`);
-    });
+        })
+        .catch(error => console.error("Error fetching random product:", error));
+};
 
-    $('#allCategories').click(function () {
-    
-        $("#cardsRow").empty(); // Clear existing cards
-        addCards(`https://fakestoreapi.com/products`);
-    });
+$('#womensCategory').click(function () {
 
- 
+    const womensClothing = encodeURIComponent("women's clothing");
+    $("#cardsRow").empty(); // Clear existing cards
+    $("#image-div").empty(); // Clear image
+    addCards(`https://fakestoreapi.com/products/category/${womensClothing}`);
+});
+
+$('#mensCategory').click(function () {
+
+    const mensClothing = encodeURIComponent("men's clothing");
+    $("#cardsRow").empty(); // Clear existing cards
+    $("#image-div").empty(); // Clear image
+    addCards(`https://fakestoreapi.com/products/category/${mensClothing}`);
+});
+
+$('#jeweleryCategory').click(function () {
+
+    $("#cardsRow").empty(); // Clear existing cards
+    $("#image-div").empty(); // Clear image
+    addCards(`https://fakestoreapi.com/products/category/jewelery`);
+});
+
+$('#allCategories').click(function () {
+
+    $("#cardsRow").empty(); // Clear existing cards
+    $("#image-div").empty(); // Clear image
+    addCards(`https://fakestoreapi.com/products`);
+});
+
+
+$('#salj-icon').click(function () {
+
+    $("#cardsRow").empty(); // Clear existing cards
+    addImage(); //add the image again
+    addCards(`https://fakestoreapi.com/products`);
+});
+
+function addImage() {
+    const imageDiv = document.getElementById('image-div');
+
+    imageDiv.innerHTML = `
+        <img src="https://kvalitetsmagasinet.se/wp-content/blogs.dir/sites/6/2018/07/sommarbild.jpeg"
+        class="img-fluid" alt="Bild">
+        <div class="overlay-text"> 
+            <h3 class="card-title">Nyheter</h3> 
+            <div class="btn-wrapper">
+                <a href="#" class="btn btn-primary">Upptäck</a> 
+            </div> 
+        </div>
+        `;
+};
