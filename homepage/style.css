@@ -91,10 +91,11 @@ color: black;
     display: block; 
     width: 30%; 
 }
-
+/*
 button{
     width: 30%;
 }
+*/
 #icon-list-footer img{
     width: 30px;
     height: auto;
@@ -283,6 +284,10 @@ img.displaySlide {
 
 .next {
     right: 0;
+}
+
+.slide.displaySlide {
+    display: block; /* Displays slides when the .displaySlide class is added */
 }
 
 /* -------------------------------------------------------------- */

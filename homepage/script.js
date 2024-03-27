@@ -34,7 +34,7 @@ for (let i = 0; i < q.length; i++) {
 
 $(document).ready(function () {
     addCards(`https://fakestoreapi.com/products`);
-
+    initializeSlider();
 });
 
 
@@ -132,16 +132,20 @@ $('#allCategories').click(function () {
 
 
 $('#salj-icon').click(function () {
-
+    console.log("Salj icon clicked");
     $("#cardsRow").empty(); // Clear existing cards
-    addSlideshow(); //add the slideshow again
+    $("#slideshow").empty(); // Clear image
+
+    addSlideShow(); //add the slideshow again
+    initializeSlider();
+
     addCards(`https://fakestoreapi.com/products`);
+
 });
 
-function addSlideshow() {
-    const slideshow = document.getElementById('slideshow');
-
-    slideshow.innerHTML = `
+function createSlideShow() {
+    return `
+    <div class="col">
     <div class="slides">
     <img class="slide" src="images/cat-han-JSGcF7g_67E-unsplash.jpg" alt="">
     <img class="slide" src="images/james-ree-ZmeFtu11Hpc-unsplash.jpg" alt="">
@@ -149,50 +153,63 @@ function addSlideshow() {
     </div>
     <button class="prev" onclick="prevSlide()">&#10094</button>
     <button class="next" onclick="nextSlide()">&#10095</button>
+    </div>
         `;
 };
+
+function addSlideShow() {
+    const slideshow = $("#slideshow");
+    console.log("Slideshow element:", slideshow);
+    const slideshowHTML = createSlideShow();
+
+    slideshow.html(slideshowHTML);
+}
 
 
 
 //------------------------ JavaScript SlideShow ------------------------
 
-const slides = document.querySelectorAll('.slides img');
-let slideIndex = 0;
-let intervalId = null;
-
-document.addEventListener("DOMContentLoaded", initializeSlider());
-
 function initializeSlider() {
+
+    const slides = document.querySelectorAll('.slides img');
+    let slideIndex = 0;
+    let intervalId = null;
+
+
     if (slides.length > 0) {
         slides[slideIndex].classList.add("displaySlide");
         intervalId = setInterval(nextSlide, 5000);
     }
-}
 
-function showSlide(index) {
 
-    if (index >= slides.length) {
-        slideIndex = 0;
-    } else if (index < 0) {
-        slideIndex = slides.length - 1;
+    function showSlide(index) {
+
+        if (index >= slides.length) {
+            slideIndex = 0;
+        } else if (index < 0) {
+            slideIndex = slides.length - 1;
+        }
+
+        slides.forEach(slide => {
+            slide.classList.remove("displaySlide");
+        });
+
+        slides[slideIndex].classList.add("displaySlide");
     }
 
-    slides.forEach(slide => {
-        slide.classList.remove("displaySlide");
-    });
+    function prevSlide() {
+        clearInterval(intervalId)
+        slideIndex--;
+        showSlide(slideIndex);
+    }
 
-    slides[slideIndex].classList.add("displaySlide");
-}
+    function nextSlide() {
+        slideIndex++;
+        showSlide(slideIndex);
+    }
 
-function prevSlide() {
-    clearInterval(intervalId)
-    slideIndex--;
-    showSlide(slideIndex);
-}
-
-function nextSlide() {
-    slideIndex++;
-    showSlide(slideIndex);
+    $('#slideshow').on('click', '.prev', prevSlide);
+    $('#slideshow').on('click', '.next', nextSlide);
 }
 
 // ------------------------------------------------------------------
