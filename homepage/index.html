@@ -87,13 +87,12 @@
         </div>
     </header>
 
+    <!--
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
                 <div class="image-container" id="image-div">
-                    <!-- VIDEO ISTÄLLET FÖR BILD. SER PROFFSIGT UT?
-                    preload="auto" loop="loop" muted="muted" osv. Kolla på cos.com för inspo
-                    -->
+                    
                     <img src="https://kvalitetsmagasinet.se/wp-content/blogs.dir/sites/6/2018/07/sommarbild.jpeg"
                         class="img-fluid" alt="Bild">
                     <div class="overlay-text">
@@ -105,6 +104,18 @@
                 </div>
             </div>
         </div>
+    </div> -->
+
+
+    <div class="slideshow" id="slideshow">
+        <div class="slides">
+            <img class="slide" src="images/cat-han-JSGcF7g_67E-unsplash.jpg" alt="">
+            <img class="slide" src="images/james-ree-ZmeFtu11Hpc-unsplash.jpg" alt="">
+            <img class="slide" src="images/mostafa-mahmoudi-J4DnKxz_3sA-unsplash.jpg" alt="">
+        </div>
+        <button class="prev" onclick="prevSlide()">&#10094</button>
+        <button class="next" onclick="nextSlide()">&#10095</button>
+
     </div>
 
     <div class="container-fluid">
@@ -118,21 +129,6 @@
             </div>
         </div>
 
-        <!--
-        <div class="row">
-            <div
-                class="col-sm-6 col-md-6 col-lg-6 img-fluid d-flex justify-content-end align-items-end justify-content-md-end align-items-md-end spring-new-column">
-                <img src="images\cos2.jpeg" alt="damkläder">
-                <a href="#" class="spring-link">Spring 2024 Womenswear</a>
-            </div>
-            <div
-                class="col-sm-6 col-md-6 col-lg-6 img-fluid d-flex justify-content-start align-items-start  justify-content-md-start align-items-md-start spring-new-column">
-                <img src="images\cos.jpeg" alt="herrkläder">
-                <a href="#" class="spring-link">Spring 2024 Menswear</a>
-            </div>
-        </div>
-    </div>
-    -->
         <div class="spacer"></div>
 
 
@@ -153,20 +149,13 @@
                     <label id="email-label-footer" for="exampleInputEmail1" class="form-label mt-4">Anmäl dig till
                         nyhetsbrev!</label>
                     <div class="input-group mb-3 justify-content-center">
-                        <input type="text" class="form-control input-grouped" placeholder="E-mail"
-                            aria-label="E-mail" aria-describedby="button-addon2">
+                        <input type="text" class="form-control input-grouped" placeholder="E-mail" aria-label="E-mail"
+                            aria-describedby="button-addon2">
                         <button class="btn btn-dark btn-sm btn-grouped" type="button" id="button-addon2">Anmäl</button>
                     </div>
                     <small id="email-small-footer" class="form-text text-muted">10% vid nästa köp om du anmäler dig till
                         nyhetsbrevet</small>
 
-                    <!--
-                    <input type="email" class="form-control" id="email-input-footer" aria-describedby="emailHelp"
-                        placeholder="Skriv in mail">
-                    <small id="email-small-footer" class="form-text text-muted">10% vid nästa köp om du anmäler dig till
-                        nyhetsbrevet</small>
-                    <button type="button" class="btn btn-dark mt-2">Anmäl</button>
-                    -->
                 </div>
 
                 <div id="social-media-icons-div" class="container-fluid d-flex flex-column">

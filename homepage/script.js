@@ -104,7 +104,7 @@ $('#womensCategory').click(function () {
 
     const womensClothing = encodeURIComponent("women's clothing");
     $("#cardsRow").empty(); // Clear existing cards
-    $("#image-div").empty(); // Clear image
+    $("#slideshow").empty(); // Clear image
     addCards(`https://fakestoreapi.com/products/category/${womensClothing}`);
 });
 
@@ -112,21 +112,21 @@ $('#mensCategory').click(function () {
 
     const mensClothing = encodeURIComponent("men's clothing");
     $("#cardsRow").empty(); // Clear existing cards
-    $("#image-div").empty(); // Clear image
+    $("#slideshow").empty(); // Clear image
     addCards(`https://fakestoreapi.com/products/category/${mensClothing}`);
 });
 
 $('#jeweleryCategory').click(function () {
 
     $("#cardsRow").empty(); // Clear existing cards
-    $("#image-div").empty(); // Clear image
+    $("#slideshow").empty(); // Clear image
     addCards(`https://fakestoreapi.com/products/category/jewelery`);
 });
 
 $('#allCategories').click(function () {
 
     $("#cardsRow").empty(); // Clear existing cards
-    $("#image-div").empty(); // Clear image
+    $("#slideshow").empty(); // Clear image
     addCards(`https://fakestoreapi.com/products`);
 });
 
@@ -134,21 +134,65 @@ $('#allCategories').click(function () {
 $('#salj-icon').click(function () {
 
     $("#cardsRow").empty(); // Clear existing cards
-    addImage(); //add the image again
+    addSlideshow(); //add the slideshow again
     addCards(`https://fakestoreapi.com/products`);
 });
 
-function addImage() {
-    const imageDiv = document.getElementById('image-div');
+function addSlideshow() {
+    const slideshow = document.getElementById('slideshow');
 
-    imageDiv.innerHTML = `
-        <img src="https://kvalitetsmagasinet.se/wp-content/blogs.dir/sites/6/2018/07/sommarbild.jpeg"
-        class="img-fluid" alt="Bild">
-        <div class="overlay-text"> 
-            <h3 class="card-title">Nyheter</h3> 
-            <div class="btn-wrapper">
-                <a href="#" class="btn btn-primary">Upptäck</a> 
-            </div> 
-        </div>
+    slideshow.innerHTML = `
+    <div class="slides">
+    <img class="slide" src="images/cat-han-JSGcF7g_67E-unsplash.jpg" alt="">
+    <img class="slide" src="images/james-ree-ZmeFtu11Hpc-unsplash.jpg" alt="">
+    <img class="slide" src="images/mostafa-mahmoudi-J4DnKxz_3sA-unsplash.jpg" alt="">
+    </div>
+    <button class="prev" onclick="prevSlide()">&#10094</button>
+    <button class="next" onclick="nextSlide()">&#10095</button>
         `;
 };
+
+
+
+//------------------------ JavaScript SlideShow ------------------------
+
+const slides = document.querySelectorAll('.slides img');
+let slideIndex = 0;
+let intervalId = null;
+
+document.addEventListener("DOMContentLoaded", initializeSlider());
+
+function initializeSlider() {
+    if (slides.length > 0) {
+        slides[slideIndex].classList.add("displaySlide");
+        intervalId = setInterval(nextSlide, 5000);
+    }
+}
+
+function showSlide(index) {
+
+    if (index >= slides.length) {
+        slideIndex = 0;
+    } else if (index < 0) {
+        slideIndex = slides.length - 1;
+    }
+
+    slides.forEach(slide => {
+        slide.classList.remove("displaySlide");
+    });
+
+    slides[slideIndex].classList.add("displaySlide");
+}
+
+function prevSlide() {
+    clearInterval(intervalId)
+    slideIndex--;
+    showSlide(slideIndex);
+}
+
+function nextSlide() {
+    slideIndex++;
+    showSlide(slideIndex);
+}
+
+// ------------------------------------------------------------------
