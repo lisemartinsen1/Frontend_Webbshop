@@ -35,6 +35,7 @@ for (let i = 0; i < q.length; i++) {
 $(document).ready(function () {
     addCards(`https://fakestoreapi.com/products`);
     initializeSlider();
+    addCategoryHeader("ALLA");
 });
 
 
@@ -105,6 +106,7 @@ $('#womensCategory').click(function () {
     const womensClothing = encodeURIComponent("women's clothing");
     $("#cardsRow").empty(); // Clear existing cards
     $("#slideshow").empty(); // Clear image
+    addCategoryHeader("DAM");
     addCards(`https://fakestoreapi.com/products/category/${womensClothing}`);
 });
 
@@ -113,6 +115,7 @@ $('#mensCategory').click(function () {
     const mensClothing = encodeURIComponent("men's clothing");
     $("#cardsRow").empty(); // Clear existing cards
     $("#slideshow").empty(); // Clear image
+    addCategoryHeader("MAN");
     addCards(`https://fakestoreapi.com/products/category/${mensClothing}`);
 });
 
@@ -120,6 +123,7 @@ $('#jeweleryCategory').click(function () {
 
     $("#cardsRow").empty(); // Clear existing cards
     $("#slideshow").empty(); // Clear image
+    addCategoryHeader("SMYCKEN");
     addCards(`https://fakestoreapi.com/products/category/jewelery`);
 });
 
@@ -127,6 +131,7 @@ $('#allCategories').click(function () {
 
     $("#cardsRow").empty(); // Clear existing cards
     $("#slideshow").empty(); // Clear image
+    addCategoryHeader("ALLA");
     addCards(`https://fakestoreapi.com/products`);
 });
 
@@ -139,9 +144,18 @@ $('#salj-icon').click(function () {
     addSlideShow(); //add the slideshow again
     initializeSlider();
 
+    addCategoryHeader("ALLA")
     addCards(`https://fakestoreapi.com/products`);
 
 });
+
+
+function addCategoryHeader(text) {
+    const headerDiv = $("#category-header");
+    const header = `<h2>${text}</h2>`;
+    headerDiv.html(header);
+}
+
 
 function createSlideShow() {
     return `
