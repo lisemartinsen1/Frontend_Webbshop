@@ -23,6 +23,37 @@ header {
     overflow: hidden;
 
 }
+
+
+/* ---------- Typing Header ---------- */
+#sentence {
+    font-family: Arial, sans-serif;
+    padding: 10px;
+    display: inline-block;
+
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    
+    
+}
+
+#typingHeader {
+    color: rgb(130, 148, 124);
+    font-weight: bold;
+    font-size: 6vw;
+}
+    
+.typing-header {
+    font-size: 6vw;
+    color: white;
+    }
+
+/* ----------------------------------- */
+
+
 .overlay-text {
 position: absolute;
 top: 50%;
@@ -289,10 +320,6 @@ img.displaySlide {
 
 .next {
     right: 0;
-}
-
-.slide.displaySlide {
-    display: block; /* Displays slides when the .displaySlide class is added */
 }
 
 /* -------------------------------------------------------------- */

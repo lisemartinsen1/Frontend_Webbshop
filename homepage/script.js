@@ -226,4 +226,37 @@ function initializeSlider() {
     $('#slideshow').on('click', '.next', nextSlide);
 }
 
-// ------------------------------------------------------------------
+
+// ------------------ Typing Header --------------------
+
+
+const words = ["Damkläder", "Herrkläder", "Smycken"];
+let currentIndex = 0;
+let currentWord = words[currentIndex];
+let index = 0;
+let direction = 1;
+
+function typeWord() {
+    const sentence = currentWord.substring(0, index);
+    document.getElementById('typingHeader').textContent = sentence;
+    index += direction;
+    if (index > currentWord.length + 1 || index < 0) {
+        direction *= -1;
+        if (index < 0) {
+            setTimeout(changeWord, 500); 
+        } else {
+            setTimeout(typeWord, 1000); 
+        }
+    } else {
+        setTimeout(typeWord, 150);
+    }
+}
+
+function changeWord() {
+    currentWord = words[currentIndex];
+    index = direction === 1 ? 0 : currentWord.length;
+    currentIndex = (currentIndex + 1) % words.length;
+    setTimeout(typeWord, 150); 
+}
+
+typeWord();
