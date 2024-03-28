@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const emailInput = document.querySelector("input[name='email']");
         const emailValue = emailInput.value.trim();
         localStorage.setItem('email', emailValue);
+        
         if (!emailValue.includes("@") || emailValue.length > 50) {
             alert("Vänligen ange en giltig e-postadress (max 50 tecken).");
             return;    
