@@ -33,18 +33,19 @@ function createCard(id, image, title, description, price) {
     return `
         <div class="row">
             <div class="col-4">
-                <img src="${image}" alt="product image" class="img-fluid" style="max-width: 100px; max-height: 100px;">
+                <img src="${image}" alt="product image" class="img-fluid max-size">
             </div>
             <div class="col-4">
                 <h3>${title}</h3>
-                <p>${description}</p>
+               
             </div>
             <div class="col-4">
-                <h5>$${price}</h5>
+                <h5 class="price-size">$${price}</h5>
             </div>
         </div>
     `;
 }
+
 
 function getPrice() {
     const price = localStorage.getItem('price');
