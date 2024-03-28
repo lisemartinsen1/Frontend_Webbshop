@@ -15,23 +15,16 @@
 
 <body>
 
-    <!-- Top Bar -->
+    
     <header class="sticky-top">
 
+        <!-- Top Bar -->
         <div id="topDiv" class="container-fluid text-center">
             <p id="top-p" class="py-1 mb-0">Fri frakt och retur</p>
         </div>
 
-
         <!-- Navbar -->
-        <!-- To Do
-             1. Klicka på SALJ texten så ska sidan laddas om/hamna på startsida
-             2. Få toggler-ikonen att hamna i mitten av knappen
-             3. Få toggler-ikonen att snurra 90 grader när man trycker på den (javascript?)
-             4. När skärmen är mindre än sm ska man kunna klicka på förstoringsglaset och en 
-                sökbar ska dyka upp och täcka hela navbaren (alltså täcka titel och länkar)
-                -->
-        <div class="container-fluid pt-3" id="meny-top">
+        <div class="container-fluid pt-3 pb-2" id="meny-top">
             <div id="top-row" class="row justify-content-end">
                 <div class="col-3">
                     <nav class="navbar navbar-expand-sm navbar">
@@ -67,12 +60,11 @@
                         <input class="form-control me-2" type="search" placeholder="Sök" aria-label="Sök">
                     </form>
                 </div>
-                <!-- Hur får jag tillbaka search-bar när jag klickar på ikonen? 
-                    Vill att sökbaren ska ta all plats i navbaren när man klickar på-->
+        
                 <div id="search-icon" class="col-3 d-block d-sm-none d-flex justify-content-end">
                     <!-- Visa på mindre än sm -->
                     <button class="btn" type="button" onclick="toggleSearchBar()">
-                        <i class="bi bi-search"></i> <!-- Bootstraps förstoringsglasikon -->
+                        <i class="bi bi-search"></i>
                     </button>
                 </div>
 
@@ -80,38 +72,11 @@
         </div>
     </header>
 
-    <!--
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12">
-                <div class="image-container" id="image-div">
-                    
-                    <img src="https://kvalitetsmagasinet.se/wp-content/blogs.dir/sites/6/2018/07/sommarbild.jpeg"
-                        class="img-fluid" alt="Bild">
-                    <div class="overlay-text">
-                        <h3 class="card-title">Nyheter</h3>
-                        <div class="btn-wrapper">
-                            <a href="#" class="btn btn-primary">Upptäck</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-
 
     <div class="slideshow" id="slideshow">
         <div class="slides">
             <img class="slide" src="images/cat-han-JSGcF7g_67E-unsplash.jpg" alt="">
             <img class="slide" src="images/nimble-made-NS2BZsGxOLE-unsplash.jpg" alt="">
-            <!--  <img class="slide" src="images/james-ree-ZmeFtu11Hpc-unsplash.jpg" alt="">
-                    <img class="slide" src="images/david-lezcano-NfZiOJzZgcg-unsplash.jpg" alt="">
-                    <img class="slide" src="images/mnz-ToLMORRb97Q-unsplash.jpg" alt="">
-                     <img class="slide" src="images/segal-jewelry-NsH-CvU0deg-unsplash.jpg" alt="">
-                      <img class="slide" src="images/nimble-made-BKYeLLB1OxI-unsplash.jpg" alt="">
-                        <img class="slide" src="images/nimble-made-kY8hmUQV9Ek-unsplash.jpg" alt="">
-                -->
             <img class="slide" src="images/amy-shamblen-F52I5BtDuhY-unsplash.jpg" alt="">
             <img class="slide" src="images/eric-fung-Z0GZrpwcc5Y-unsplash.jpg" alt="">
             <img class="slide" src="images/daniel-storek-JM-qKEd1GMI-unsplash.jpg" alt="">
@@ -135,9 +100,6 @@
         <!-- Här läggs rubrik för kategori -->
     </div>
 
-
-    <!-- Innuti denna div ska det finnas en titel och två bilder för vårnyheter för dam respektive herr -->
-
     <div class="container-fluid">
         <div class="row g-5" id="cardsRow">
             <!-- Här kommer de dynamiskt skapade korten att läggas till -->
@@ -147,17 +109,8 @@
     <div class="spacer"></div>
 
 
-
-
     <footer>
-        <!--
-    1. Nyhetsbrev
-    2. Sociala medier logo
-    3. Länkar till kundservice mm
-    4. 2024 SALJ Copyright
 
-    Innehållet ska vara centrerat på sidan
-   -->
         <div id="container-footer" class="container text-center">
 
             <div class="d-flex flex-column align-items-center">
@@ -193,9 +146,9 @@
                 </div>
             </div>
 
-
             <div id="customer-service-div">
-                <a href="mailto:customerservice@salj.se">Kontakta kundtjänst</a>
+                <a href="mailto:customerservice@salj.se">Kontakta kundtjänst | </a>
+                <a href="../customerServicepage/customerService.html"> Vanliga frågor</a>
             </div>
 
             <div id="copyright-footer" class="container">

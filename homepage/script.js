@@ -36,6 +36,7 @@ $(document).ready(function () {
     addCards(`https://fakestoreapi.com/products`);
     initializeSlider();
     addCategoryHeader("ALLA PRODUKTER");
+    initializeTypingHeader();
 });
 
 
@@ -67,7 +68,7 @@ function createCard(id, image, title, description, price) {
                         </div>
                     </div>
                 </div>
-                <small class="text-muted">$${price}</small>
+                <small id="price-text" class="text-muted">$${price}</small>
                 <a class="btn btn-outline-dark my-2 order-btn" href="../orderpage/order.html?id=${id}" role="button">Beställ</a>
                 
             </div>
@@ -115,7 +116,7 @@ $('#mensCategory').click(function () {
     const mensClothing = encodeURIComponent("men's clothing");
     $("#cardsRow").empty(); // Clear existing cards
     $("#slideshow").empty(); // Clear image
-    addCategoryHeader("MAN");
+    addCategoryHeader("HERR");
     addCards(`https://fakestoreapi.com/products/category/${mensClothing}`);
 });
 
@@ -137,15 +138,19 @@ $('#allCategories').click(function () {
 
 
 $('#salj-icon').click(function () {
-    console.log("Salj icon clicked");
     $("#cardsRow").empty(); // Clear existing cards
     $("#slideshow").empty(); // Clear image
 
     addSlideShow(); //add the slideshow again
     initializeSlider();
 
+    clearTimeout(typingHeaderTimeout)
+    $("#typingHeader").empty();
+    initializeTypingHeader();
+
     addCategoryHeader("ALLA PRODUKTER")
     addCards(`https://fakestoreapi.com/products`);
+
 
 });
 
@@ -159,14 +164,21 @@ function addCategoryHeader(text) {
 
 function createSlideShow() {
     return `
-    <div class="col">
     <div class="slides">
-    <img class="slide" src="images/cat-han-JSGcF7g_67E-unsplash.jpg" alt="">
-    <img class="slide" src="images/james-ree-ZmeFtu11Hpc-unsplash.jpg" alt="">
-    <img class="slide" src="images/mostafa-mahmoudi-J4DnKxz_3sA-unsplash.jpg" alt="">
+        <img class="slide" src="images/cat-han-JSGcF7g_67E-unsplash.jpg" alt="">
+        <img class="slide" src="images/nimble-made-NS2BZsGxOLE-unsplash.jpg" alt="">
+        <img class="slide" src="images/amy-shamblen-F52I5BtDuhY-unsplash.jpg" alt="">
+        <img class="slide" src="images/eric-fung-Z0GZrpwcc5Y-unsplash.jpg" alt="">
+        <img class="slide" src="images/daniel-storek-JM-qKEd1GMI-unsplash.jpg" alt="">
+        <img class="slide" src="images/mostafa-mahmoudi-J4DnKxz_3sA-unsplash.jpg" alt="">
     </div>
+
     <button class="prev" onclick="prevSlide()">&#10094</button>
     <button class="next" onclick="nextSlide()">&#10095</button>
+
+    <div id="sentence" class="container">
+        <span class="typing-header" id="shoppa">Shoppa</span>
+        <span class="typing-header" id="typingHeader"></span>
     </div>
         `;
 };
@@ -230,6 +242,10 @@ function initializeSlider() {
 // ------------------ Typing Header --------------------
 
 
+let typingHeaderTimeout;
+
+function initializeTypingHeader() {
+
 const words = ["Damkläder", "Herrkläder", "Smycken"];
 let currentIndex = 0;
 let currentWord = words[currentIndex];
@@ -245,10 +261,10 @@ function typeWord() {
         if (index < 0) {
             setTimeout(changeWord, 500); 
         } else {
-            setTimeout(typeWord, 1000); 
+            typingHeaderTimeout = setTimeout(typeWord, 1000); 
         }
     } else {
-        setTimeout(typeWord, 150);
+        typingHeaderTimeout = setTimeout(typeWord, 150);
     }
 }
 
@@ -256,7 +272,12 @@ function changeWord() {
     currentWord = words[currentIndex];
     index = direction === 1 ? 0 : currentWord.length;
     currentIndex = (currentIndex + 1) % words.length;
-    setTimeout(typeWord, 150); 
+    typingHeaderTimeout = setTimeout(typeWord, 150); 
 }
 
 typeWord();
+}
+
+
+
+
