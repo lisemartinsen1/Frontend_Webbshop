@@ -69,7 +69,7 @@ function createCard(id, image, title, description, price) {
                     </div>
                 </div>
                 <small id="price-text" class="text-muted">$${price}</small>
-                <a class="btn btn-outline-dark my-2 order-btn" href=../orderpage/order.html?id=${id}" role="button">Beställ</a>
+                <a class="btn btn-outline-dark my-2 order-btn" href="orderpage/order.html?id=${id}" role="button">Beställ</a>
                 
             </div>
         </div>
@@ -80,6 +80,7 @@ function createCard(id, image, title, description, price) {
 
 // Funktion för att lägga till fler "card" divar
 function addCards(path) {
+    
     const cardsGroup = $("#cardsRow");
 
     fetch(path)
