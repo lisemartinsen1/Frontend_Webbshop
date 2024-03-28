@@ -21,7 +21,21 @@ header {
     height: 25px;
     transition: transform 0.3s ease;
     overflow: hidden;
+}
 
+#topDiv {
+    background-color:  #010101;
+    color: white;
+    border-bottom: 0.75px solid grey;
+}
+
+#top-p {
+    font-size: 13px;
+}
+
+
+#meny-top {
+    background-color:  #f3ede6;
 }
 
 
@@ -236,6 +250,12 @@ footer {
 
 .card:hover {
     border-color: black;
+}
+
+.order-btn {
+    background-color: #cac2b8;
+    color: rgb(252, 250, 250);
+    border: none;
 }
 
 .card-footer {
