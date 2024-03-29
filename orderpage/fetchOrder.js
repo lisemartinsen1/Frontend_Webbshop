@@ -1,3 +1,4 @@
+
 const params = new URLSearchParams(window.location.search);
 const id = params.get('id');
 console.log(id);
@@ -11,14 +12,13 @@ $(document).ready(function () {
         .then(response => response.json())
         .then(data => {
             
-
                 const id = data.id;
                 const img = data.image;
                 const title = data.title;
                 const description = data.description;
                 const price = data.price;
                 // Skapa ett nytt "card" div-element och lägg till det i raden
-                const cardHTML = createCard(id, img, title, description, price);
+                const cardHTML = createCard(img, title, description, price);
                 cardInput.append(cardHTML);
 
                 localStorage.setItem('id', id);
@@ -28,7 +28,7 @@ $(document).ready(function () {
 
 });
 
-function createCard(id, image, title, description, price) {
+function createCard(image, title, description, price) {
     return `
     <div class="row order-1 order-md-2">
     <div class="col-12 col-md-6 d-flex flex-column align-items-center mb-3">

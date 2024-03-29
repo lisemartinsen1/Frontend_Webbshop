@@ -17,7 +17,7 @@ $(document).ready(function () {
                 const description = data.description;
                 const price = data.price;
                 // Skapa ett nytt "card" div-element och lägg till det i raden
-                const cardHTML = createCard(id, img, title, description, price);
+                const cardHTML = createCard(img, title, price);
                 cardInput.append(cardHTML);
                 localStorage.setItem('price', price);
                 
@@ -29,15 +29,14 @@ $(document).ready(function () {
 
 });
 
-function createCard(id, image, title, description, price) {
+function createCard(image, title, price) {
     return `
         <div class="row">
             <div class="col-4">
                 <img src="${image}" alt="product image" class="img-fluid max-size">
             </div>
             <div class="col-4">
-                <h3>${title}</h3>
-               
+                <h3>${title}</h3> 
             </div>
             <div class="col-4">
                 <h5 class="price-size">$${price}</h5>
